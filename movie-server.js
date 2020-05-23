@@ -69,7 +69,31 @@ app.get("/movie_home", (req, res)=>{
 
 });
 
+app.get("/movie_news",(request, response)=>{
+    const mongoose = require("mongodb").MongoClient;
+    //url
+    mongoose.connect(MONGO_URL, (err, client)=>{
+        var db= client.db("mydb");
+        db.collection("news").find({})
+            .toArray(function(err, docs){
+                response.json(docs);
+                client.close();
+            });
+    })
+})
 
+app.get("/movie_pop",(request, response)=>{
+    const mongoose = require("mongodb").MongoClient;
+    //url
+    mongoose.connect(MONGO_URL, (err, client)=>{
+        var db= client.db("mydb");
+        db.collection("news_pop").find({})
+            .toArray(function(err, docs){
+                response.json(docs);
+                client.close();
+            });
+    })
+})
 
 
 

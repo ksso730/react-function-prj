@@ -24,6 +24,7 @@ function App3() {
     return(
         <div className={"row"}>
             <H2/>
+            <H/>
             <SearchBar str={str} onUserInput={handleUserInput}/>
             <div style={{"height":"30px"}}></div>
             <MusicTable music={music} str={str}/>
