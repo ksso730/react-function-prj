@@ -3,12 +3,18 @@ import logo from './logo.svg';
 import './App.css';
 
 function App(props) {
+    const msg = props.msg;
+    const data = msg.split("\n"); //[React, Redux ...]
+    const print = data.map((subject)=>
+        <li>{subject}</li>
+    )
   return (
     <div>
-      <h1>이름 : </h1>
-    <h1>성별 : </h1>
-<h1>나이 : </h1>
-</div>
+        {/*<h1>이름 : {props.name}</h1>
+        <h1>성별 : {props.sex}</h1>
+        <h1>나이 : {props.age}</h1>*/}
+        <ul>{print}</ul>
+    </div>
   );
 }
 

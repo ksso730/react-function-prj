@@ -2,11 +2,15 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
+import App2 from './App2'
 import * as serviceWorker from './serviceWorker';
 
+const msg = "React\nRedux\nMongoDB\nNodeJs\nMobx"
 ReactDOM.render(
   <React.StrictMode>
-    <App name={"김수연"} sex={"여자"} age={"30"}/>
+    {/*<App name={"홍길동"} sex={"남자"} age={"30"}/>*/}
+    {/*<App msg={msg}/>*/}
+    <App2/>
   </React.StrictMode>,
   document.getElementById('root')
 );
