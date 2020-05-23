@@ -16,6 +16,12 @@ function App2() {
                 console.log(res.data);
             })
     },[]);
+
+    // 이벤트 처리 함수
+    const handleChange=(e)=>{
+        // 입력한 값을 출력
+        console.log(e.target.value);
+    }
     // 시작하자마자 한번만 읽음 : didMount 에만 함수를 적용하고 싶다면 함수의 2번째 인자로 [] deps 를 줘야함.
     // 내용 갱신 : deps 안씀.
 
@@ -55,6 +61,14 @@ function App2() {
         <div className={"row"}>
         <H/>
         <div style={{"height":"30px"}}></div>
+            <table className={"table"}>
+                <tr>
+                    <td>
+                        <input type={"text"} className={"input-sm"} size={"25"}
+                               onChange={handleChange}/>
+                    </td>
+                </tr>
+            </table>
             <table className={"table"}>
                 <thead>
                     <tr className={"success"}>
